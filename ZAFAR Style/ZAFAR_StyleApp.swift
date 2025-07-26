@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct ZAFAR_StyleApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+    @StateObject var authVM = AuthViewModel()
+
+       var body: some Scene {
+           WindowGroup {
+               if authVM.isVerified {
+                  BarberProfileView()
+                       .environmentObject(authVM)// Bu sizning asosiy sahifangiz bo'lishi kerak
+               } else {
+                   PhoneLoginView()
+                       .environmentObject(authVM)
+               }
+           }
+       }
 }
