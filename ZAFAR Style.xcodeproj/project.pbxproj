@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		497E5FA92E352B8C0084AB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 497E5F932E352B8A0084AB06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 497E5F9A2E352B8A0084AB06;
+			remoteInfo = "ZAFAR Style";
+		};
+		497E5FB32E352B8C0084AB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 497E5F932E352B8A0084AB06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 497E5F9A2E352B8A0084AB06;
+			remoteInfo = "ZAFAR Style";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		497E5F9B2E352B8A0084AB06 /* ZAFAR Style.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZAFAR Style.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		497E5FA82E352B8C0084AB06 /* ZAFAR StyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ZAFAR StyleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		497E5FB22E352B8C0084AB06 /* ZAFAR StyleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ZAFAR StyleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		497E5F9D2E352B8A0084AB06 /* ZAFAR Style */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "ZAFAR Style";
+			sourceTree = "<group>";
+		};
+		497E5FAB2E352B8C0084AB06 /* ZAFAR StyleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "ZAFAR StyleTests";
+			sourceTree = "<group>";
+		};
+		497E5FB52E352B8C0084AB06 /* ZAFAR StyleUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "ZAFAR StyleUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		497E5F982E352B8A0084AB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		497E5FA52E352B8C0084AB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		497E5FAF2E352B8C0084AB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		497E5F922E352B8A0084AB06 = {
+			isa = PBXGroup;
+			children = (
+				497E5F9D2E352B8A0084AB06 /* ZAFAR Style */,
+				497E5FAB2E352B8C0084AB06 /* ZAFAR StyleTests */,
+				497E5FB52E352B8C0084AB06 /* ZAFAR StyleUITests */,
+				497E5F9C2E352B8A0084AB06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		497E5F9C2E352B8A0084AB06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				497E5F9B2E352B8A0084AB06 /* ZAFAR Style.app */,
+				497E5FA82E352B8C0084AB06 /* ZAFAR StyleTests.xctest */,
+				497E5FB22E352B8C0084AB06 /* ZAFAR StyleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		497E5F9A2E352B8A0084AB06 /* ZAFAR Style */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 497E5FBC2E352B8C0084AB06 /* Build configuration list for PBXNativeTarget "ZAFAR Style" */;
+			buildPhases = (
+				497E5F972E352B8A0084AB06 /* Sources */,
+				497E5F982E352B8A0084AB06 /* Frameworks */,
+				497E5F992E352B8A0084AB06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				497E5F9D2E352B8A0084AB06 /* ZAFAR Style */,
+			);
+			name = "ZAFAR Style";
+			packageProductDependencies = (
+			);
+			productName = "ZAFAR Style";
+			productReference = 497E5F9B2E352B8A0084AB06 /* ZAFAR Style.app */;
+			productType = "com.apple.product-type.application";
+		};
+		497E5FA72E352B8C0084AB06 /* ZAFAR StyleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 497E5FBF2E352B8C0084AB06 /* Build configuration list for PBXNativeTarget "ZAFAR StyleTests" */;
+			buildPhases = (
+				497E5FA42E352B8C0084AB06 /* Sources */,
+				497E5FA52E352B8C0084AB06 /* Frameworks */,
+				497E5FA62E352B8C0084AB06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				497E5FAA2E352B8C0084AB06 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				497E5FAB2E352B8C0084AB06 /* ZAFAR StyleTests */,
+			);
+			name = "ZAFAR StyleTests";
+			packageProductDependencies = (
+			);
+			productName = "ZAFAR StyleTests";
+			productReference = 497E5FA82E352B8C0084AB06 /* ZAFAR StyleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		497E5FB12E352B8C0084AB06 /* ZAFAR StyleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 497E5FC22E352B8C0084AB06 /* Build configuration list for PBXNativeTarget "ZAFAR StyleUITests" */;
+			buildPhases = (
+				497E5FAE2E352B8C0084AB06 /* Sources */,
+				497E5FAF2E352B8C0084AB06 /* Frameworks */,
+				497E5FB02E352B8C0084AB06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				497E5FB42E352B8C0084AB06 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				497E5FB52E352B8C0084AB06 /* ZAFAR StyleUITests */,
+			);
+			name = "ZAFAR StyleUITests";
+			packageProductDependencies = (
+			);
+			productName = "ZAFAR StyleUITests";
+			productReference = 497E5FB22E352B8C0084AB06 /* ZAFAR StyleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		497E5F932E352B8A0084AB06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					497E5F9A2E352B8A0084AB06 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					497E5FA72E352B8C0084AB06 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 497E5F9A2E352B8A0084AB06;
+					};
+					497E5FB12E352B8C0084AB06 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 497E5F9A2E352B8A0084AB06;
+					};
+				};
+			};
+			buildConfigurationList = 497E5F962E352B8A0084AB06 /* Build configuration list for PBXProject "ZAFAR Style" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 497E5F922E352B8A0084AB06;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 497E5F9C2E352B8A0084AB06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				497E5F9A2E352B8A0084AB06 /* ZAFAR Style */,
+				497E5FA72E352B8C0084AB06 /* ZAFAR StyleTests */,
+				497E5FB12E352B8C0084AB06 /* ZAFAR StyleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		497E5F992E352B8A0084AB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		497E5FA62E352B8C0084AB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		497E5FB02E352B8C0084AB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		497E5F972E352B8A0084AB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		497E5FA42E352B8C0084AB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		497E5FAE2E352B8C0084AB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		497E5FAA2E352B8C0084AB06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 497E5F9A2E352B8A0084AB06 /* ZAFAR Style */;
+			targetProxy = 497E5FA92E352B8C0084AB06 /* PBXContainerItemProxy */;
+		};
+		497E5FB42E352B8C0084AB06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 497E5F9A2E352B8A0084AB06 /* ZAFAR Style */;
+			targetProxy = 497E5FB32E352B8C0084AB06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		497E5FBA2E352B8C0084AB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = XD59PG7AUF;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		497E5FBB2E352B8C0084AB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = XD59PG7AUF;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		497E5FBD2E352B8C0084AB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XD59PG7AUF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MIR.ZAFAR-Style";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		497E5FBE2E352B8C0084AB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XD59PG7AUF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MIR.ZAFAR-Style";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		497E5FC02E352B8C0084AB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XD59PG7AUF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MIR.ZAFAR-StyleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZAFAR Style.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ZAFAR Style";
+			};
+			name = Debug;
+		};
+		497E5FC12E352B8C0084AB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XD59PG7AUF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MIR.ZAFAR-StyleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZAFAR Style.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ZAFAR Style";
+			};
+			name = Release;
+		};
+		497E5FC32E352B8C0084AB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XD59PG7AUF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MIR.ZAFAR-StyleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ZAFAR Style";
+			};
+			name = Debug;
+		};
+		497E5FC42E352B8C0084AB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XD59PG7AUF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MIR.ZAFAR-StyleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ZAFAR Style";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		497E5F962E352B8A0084AB06 /* Build configuration list for PBXProject "ZAFAR Style" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				497E5FBA2E352B8C0084AB06 /* Debug */,
+				497E5FBB2E352B8C0084AB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		497E5FBC2E352B8C0084AB06 /* Build configuration list for PBXNativeTarget "ZAFAR Style" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				497E5FBD2E352B8C0084AB06 /* Debug */,
+				497E5FBE2E352B8C0084AB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		497E5FBF2E352B8C0084AB06 /* Build configuration list for PBXNativeTarget "ZAFAR StyleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				497E5FC02E352B8C0084AB06 /* Debug */,
+				497E5FC12E352B8C0084AB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		497E5FC22E352B8C0084AB06 /* Build configuration list for PBXNativeTarget "ZAFAR StyleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				497E5FC32E352B8C0084AB06 /* Debug */,
+				497E5FC42E352B8C0084AB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 497E5F932E352B8A0084AB06 /* Project object */;
+}
