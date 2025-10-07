@@ -2,165 +2,152 @@ import Foundation
 import Supabase
 
 @MainActor
-class AppointmentViewModel: ObservableObject {
+class BarberProfileViewModel: ObservableObject {
+    @Published var barber : Barber?
     @Published var appointments: [Appointment] = []
-    @Published var timeSlots: [TimeSlot] = []
-    @Published var selectedDate: Date = Date()
+    @Published var isLoading = false
+    @Published var errorMessage: String?
 
-    private let client = SupabaseManager.shared.client
-    private var realtimeChannel: RealtimeChannel?
+    private let client: SupabaseClient
+    private var channel: RealtimeChannelV2?
 
-    init() {
-        Task {
-            await fetchAppointments(for: selectedDate)
-        }
+    init(supabaseURL: String, supabaseKey: String) {
+        client = SupabaseClient(
+            supabaseURL: URL(string: supabaseURL)!,
+            supabaseKey: supabaseKey
+        )
     }
-
-    deinit {
-        Task {
-            await unsubscribeFromAppointments()
-        }
-    }
-
-    func handleRefresh() async {
-        await fetchAppointments(for: selectedDate)
-    }
-
-    func fetchAppointments(for date: Date) async {
-        await unsubscribeFromAppointments()
-
-        let calendar = Calendar.current
-        let startOfDay = calendar.startOfDay(for: date)
-        let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
+    func fetchBarber(id: UUID) async {
+        isLoading = true
+        errorMessage = nil
 
         do {
-            let appointments: [Appointment] = try await client.database
-                .from("appointments")
-                .select()
-                .gte("appointment_time", value: startOfDay.ISO8601Format())
-                .lt("appointment_time", value: endOfDay.ISO8601Format())
+            let b: Barber = try await client
+                .from("barbers")
+                .select("id, display_name, city, rating, reviews, address, opening_hours, gallery, created_at"
+                )
+                .eq("id", value: id.uuidString)
+                .single()
                 .execute()
                 .value
 
-            self.appointments = appointments
-            generateTimeSlots()
-            subscribeToAppointmentChanges()
+            self.barber = b
+            print("Fetched Barber:", b)
         } catch {
-            print("🔴 ERROR fetching appointments: \(error.localizedDescription)")
+            errorMessage = error.localizedDescription
+            print("fetchBarber error:", error)
         }
+
+        isLoading = false
     }
 
-    private func subscribeToAppointmentChanges() {
-        realtimeChannel = client.realtime.channel("public:appointments")
 
-        realtimeChannel?
-            .on("postgres_changes",
-                filter: ChannelFilter(event: "*", schema: "public", table: "appointments")
-            ) { [weak self] message in
-                self?.handleRealtimePayload(message)
-            }
+
+
+    
+
+    func fetchAppointments(for barberID: UUID) async {
+        isLoading = true
+        errorMessage = nil
+        do {
+            let response = try await client
+                .from("appointments")
+                .select("id, barber_id, user_id, start_at, end_at, status")
+                .eq("barber_id", value: barberID.uuidString)
+                .order("start_at", ascending: true)
+                .execute()
+
+          let data = response.data
+
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            let appts = try decoder.decode([Appointment].self, from: data)
+            appointments = appts
+        } catch {
+            errorMessage = error.localizedDescription
+            print("Fetch error:", error)
+        }
+        isLoading = false
+    }
+
+    func subscribeToChanges(barberID: UUID) {
+        // Agar kanal oldin ochilgan bo‘lsa, unsubscribe qiling
+        if let ch = channel {
+            Task { await ch.unsubscribe() }
+        }
+
+        // Kanal yaratish
+        channel = client.realtimeV2.channel("appointments-changes")
+        guard let ch = channel else {
+            print("❌ Failed to create channel")
+            return
+        }
+
+        // INSERT
+        ch.onPostgresChange(
+            AnyAction.self,
+            schema: "public",
+            table: "appointments",
+            filter: "barber_id=eq.\(barberID.uuidString)"
+        ) { change in
+            print("🔄 INSERT change event:", change)
+            Task { await self.fetchAppointments(for: barberID) }
+        }
+
+        // UPDATE
+        ch.onPostgresChange(
+            AnyAction.self,
+            schema: "public",
+            table: "appointments",
+            filter: "barber_id=eq.\(barberID.uuidString)"
+        ) { change in
+            print("🔄 UPDATE change event:", change)
+            Task { await self.fetchAppointments(for: barberID) }
+        }
+
+        // DELETE
+        ch.onPostgresChange(
+            AnyAction.self,
+            schema: "public",
+            table: "appointments",
+            filter: "barber_id=eq.\(barberID.uuidString)"
+        ) { change in
+            print("🔄 DELETE change event:", change)
+            Task { await self.fetchAppointments(for: barberID) }
+        }
 
         Task {
-            await realtimeChannel?.subscribe()
-        }
-    }
-
-    private func handleRealtimePayload(_ message: RealtimeMessage) {
-        guard let event = message.payload["type"] as? String else { return }
-
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        decoder.dateDecodingStrategy = .iso8601
-
-        switch event {
-        case "INSERT", "UPDATE":
-            if let recordJSON = try? JSONSerialization.data(withJSONObject: message.payload["record"] ?? [:]),
-               let appointment = try? decoder.decode(Appointment.self, from: recordJSON) {
-
-                DispatchQueue.main.async {
-                    if let index = self.appointments.firstIndex(where: { $0.id == appointment.id }) {
-                        self.appointments[index] = appointment
-                    } else {
-                        self.appointments.append(appointment)
-                    }
-                    self.appointments.sort { $0.appointmentTime < $1.appointmentTime }
-                    self.generateTimeSlots()
-                }
-            }
-
-        case "DELETE":
-            if let oldJSON = try? JSONSerialization.data(withJSONObject: message.payload["old_record"] ?? [:]),
-               let appointment = try? decoder.decode(Appointment.self, from: oldJSON) {
-
-                DispatchQueue.main.async {
-                    self.appointments.removeAll { $0.id == appointment.id }
-                    self.generateTimeSlots()
-                }
-            }
-
-        default:
-            break
-        }
-    }
-
-    private func unsubscribeFromAppointments() async {
-        try? await realtimeChannel?.unsubscribe()
-        realtimeChannel = nil
-    }
-
-    func addAppointment(for timeSlot: TimeSlot, name: String, phone: String, uid: UUID) async {
-        let newAppointment = Appointment(
-            id: 0,
-            name: name,
-            phone: phone,
-            appointmentTime: timeSlot.date,
-            status: "pending",
-            userId: uid
-        )
-
-        do {
-            try await client.database
-                .from("appointments")
-                .insert(newAppointment, returning: .minimal)
-                .execute()
-        } catch {
-            print("🔴 ERROR adding appointment: \(error.localizedDescription)")
-        }
-    }
-
-    func updateAppointmentStatus(appointmentId: Int, newStatus: String) async {
-        do {
-            try await client.database
-                .from("appointments")
-                .update(["status": newStatus])
-                .eq("id", value: appointmentId)
-                .execute()
-        } catch {
-            print("🔴 ERROR updating status: \(error.localizedDescription)")
-        }
-    }
-
-    private func generateTimeSlots() {
-        let calendar = Calendar.current
-        var slots: [TimeSlot] = []
-
-        let now = Date()
-        let isToday = calendar.isDateInToday(selectedDate)
-
-        for hour in 9..<18 {
-            for minute in [0, 30] {
-                if let time = calendar.date(bySettingHour: hour, minute: minute, second: 0, of: selectedDate) {
-                    if isToday && time < now { continue }
-
-                    let isBooked = appointments.contains {
-                        abs($0.appointmentTime.timeIntervalSince(time)) < 60
-                    }
-
-                    slots.append(TimeSlot(date: time, isBooked: isBooked))
-                }
+            do {
+                _ = try await ch.subscribe()
+            } catch {
+                print("⚠️ Subscribe error:", error)
             }
         }
+    }
+    func bookAppointment(barberID: UUID, start: Date, end: Date) async {
+           do {
+               let iso = ISO8601DateFormatter()
+               let vals: [String: AnyJSON] = [
+                   "barber_id": .string(barberID.uuidString),
+                   "start_at": .string(iso.string(from: start)),
+                   "end_at": .string(iso.string(from: end)),
+                   "status": .string("booked")
+               ]
+               _ = try await client
+                   .from("appointments")
+                   .insert(vals)
+                   .execute()
 
-        self.timeSlots = slots
+               // So‘ng fetch qilib yangilash
+               await fetchAppointments(for: barberID)
+           } catch {
+               print("Booking error:", error)
+           }
+       }
+
+    deinit {
+        if let ch = channel {
+            Task { await ch.unsubscribe() }
+        }
     }
 }

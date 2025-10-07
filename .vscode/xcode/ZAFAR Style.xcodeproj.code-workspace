@@ -1,0 +1,34 @@
+{
+    "folders": [
+        {
+            "name": "ZAFAR Style/ZAFAR Style.xcodeproj",
+            "path": "../.."
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "ZAFAR StyleUITests": true,
+            "ZAFAR StyleTests": true,
+            "ZAFAR Style": true,
+            ".vscode/xcode/fifo": true,
+            ".vscode/xcode/bundles": true
+        },
+        "search.exclude": {
+            "ZAFAR StyleUITests": true,
+            "ZAFAR StyleTests": true,
+            "ZAFAR Style": true,
+            ".vscode/xcode/fifo": true,
+            ".vscode/xcode/bundles": true
+        },
+        "swift.autoGenerateLaunchConfigurations": false,
+        "swift.disableAutoResolve": true,
+        "swift.sourcekit-lsp.disable": true,
+        "swift.disableSwiftPackageManagerIntegration": true,
+        "swift.searchSubfoldersForPackages": false
+    },
+    "extensions": {
+        "unwantedRecommendations": [
+            "sswg.swift-lang"
+        ]
+    }
+}
