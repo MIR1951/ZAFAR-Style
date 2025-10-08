@@ -60,7 +60,13 @@ struct BarberProfileView: View {
                     .presentationDetents([.height(420)])
                 }
             } else {
-                Text("No barber found")
+                if let error = vm.errorMessage, !error.isEmpty {
+                    Text(error)
+                        .foregroundColor(.red)
+                        .padding()
+                } else {
+                    Text("No barber found")
+                }
             }
         }
         .onAppear {
