@@ -24,7 +24,7 @@ class BarberProfileViewModel: ObservableObject {
         do {
             let b: Barber = try await client
                 .from("barbers")
-                .select("id, display_name, city, rating, reviews, address, opening_hours, gallery, created_at"
+                .select("id, display_name, city, rating, address, opening_hours, gallery"
                 )
                 .eq("id", value: id.uuidString)
                 .single()
